@@ -26,7 +26,7 @@ createdAt: new Date().toISOString(),
 id: 'p3',
 title: 'Bí quyết nấu phở bò đậm đà tại nhà',
 author: 'Lê C',
-thumbnailUrl: 'https://images.unsplash.com/photo-1604908554027-9125aca7a6cd?q=80&w=1200&auto=format&fit=crop',
+thumbnailUrl: 'https://tse1.mm.bing.net/th/id/OIP.i6tfyHRuCya7MtrSwAgwWwHaEK?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3&fit=crop',
 content:
 'Phở bò là món ăn quốc dân. Bài viết hướng dẫn cách ninh xương, nêm nếm gia vị, xử lý mùi bò, và bảo quản nước dùng trong tủ lạnh để dùng nhiều lần…',
 category: 'Ẩm thực',
