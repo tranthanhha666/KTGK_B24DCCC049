@@ -1,33 +1,26 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
-import WeatherApp from './Components/WeatherApp';
-import StudentList from './Components/StudentList';
-import StudentDetail from './Components/StudentDetail';
-import NewsFeed from './Components/NewsFeed';
-import './App.css'; // File CSS để style cho NavLink
+import { Routes, Route, Navigate } from 'react-router-dom'
+import Navbar from './components/NavBar'
+import PostList from './pages/PostList'
+import CreatePost from './pages/CreatePost'
+import PostDetail from './pages/PostDetail'
+import EditPost from './pages/EditPost'
 
-const App: React.FC = () => {
-  return (
-    <Router>
-      <div>
-        <nav>
-          <NavLink to="/bai1">Bài 1: Thời tiết</NavLink>
-          <NavLink to="/bai2">Bài 2: Sinh viên</NavLink>
-          <NavLink to="/bai3">Bài 3: Tin tức</NavLink>
-        </nav>
 
-        <main>
-          <Routes>
-            <Route path="/bai1" element={<WeatherApp />} />
-            <Route path="/bai2" element={<StudentList />} />
-            <Route path="/student/:id" element={<StudentDetail />} /> {/* Route cho chi tiết sinh viên */}
-            <Route path="/bai3" element={<NewsFeed />} />
-            <Route path="/" element={<h2>Chọn một bài thực hành để bắt đầu</h2>} />
-          </Routes>
-        </main>
-      </div>
-    </Router>
-  );
-};
-
-export default App;
+export default function App() {
+return (
+<div className="container">
+<Navbar />
+<main>
+<Routes>
+<Route path="/" element={<Navigate to="/posts" replace />} />
+<Route path="/posts" element={<PostList />} />
+<Route path="/create" element={<CreatePost />} />
+<Route path="/posts/create" element={<CreatePost />} />
+<Route path="/posts/:id" element={<PostDetail />} />
+<Route path="/posts/edit/:id" element={<EditPost />} />
+<Route path="*" element={<div>404 Not Found</div>} />
+</Routes>
+</main>
+</div>
+)
+}

@@ -1,24 +1,120 @@
-nav {
-  background-color: #f0f0f0;
-  padding: 1rem;
-  margin-bottom: 2rem;
+:root {
+  --bg: #0f1115;
+  --card: #1a1d22;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --primary: #6366f1; /* violet-500 */
+  --border: #2a2e35;
+  --danger: #ef4444;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+  align-items: center;
+  border-radius: 0.75rem;
 }
 
-nav a {
+.navbar .brand {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.navbar a {
   text-decoration: none;
-  color: #333;
-  font-weight: bold;
+  color: var(--text);
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.navbar a:hover {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--primary);
+}
+
+.navbar a.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  background: var(--border);
+  color: var(--text);
+  transition: all 0.2s;
 }
 
-nav a.active {
-  background-color: #007bff;
-  color: white;
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
 }
 
+.btn.primary:hover {
+  background: #4f46e5;
+}
+
+.btn.danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn.danger:hover {
+  background: #dc2626;
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.card-body {
+  padding: 0.9rem;
+}
+
+.card-title {
+  color: var(--text);
+}
+
+.card-meta {
+  color: var(--muted);
+}
+
+/* Inputs */
+.input {
+  background: #1f2329;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+}
+
+.input::placeholder {
+  color: var(--muted);
+}
+
+/* Layout */
 main {
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
